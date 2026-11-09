@@ -119,7 +119,7 @@
         background: rgba(255,255,255,0.03); border-radius: 12px; padding: 20px;
         border: 1px solid rgba(255,255,255,0.05);
     }
-    .preview-input, .preview-select {
+    .preview-input {
         width: 100%; padding: 10px 15px; background: rgba(0,0,0,0.3);
         border: 1px solid rgba(24,119,242,0.2); border-radius: 8px; color: #fff;
         margin-bottom: 10px;
@@ -160,12 +160,6 @@
     .pricing-btn-blue { background: linear-gradient(135deg, #1877f2, #0d5dc4); }
     .pricing-btn-outline { background: transparent; border: 2px solid #1877f2; color: #42b5ff; }
 
-    /* ===== PAYMENT & STEPS ===== */
-    .payment-methods, .how-works { padding: 80px 20px; }
-    .payment-grid, .steps { display: flex; justify-content: center; gap: 30px; flex-wrap: wrap; max-width: 1000px; margin: 0 auto; text-align: center; }
-    .payment-card { background: rgba(255,255,255,0.04); border-radius: 16px; padding: 25px 35px; border: 1px solid rgba(255,255,255,0.06); min-width: 180px; }
-    .step-number { width: 60px; height: 60px; background: #1877f2; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.5em; font-weight: 800; margin: 0 auto 20px; }
-
     /* ===== DOWNLOAD SECTION ===== */
     .download-section { padding: 80px 20px; }
     .download-box {
@@ -175,32 +169,9 @@
     .download-main-btn {
         display: inline-flex; align-items: center; gap: 12px; padding: 20px 55px;
         background: linear-gradient(135deg, #1877f2, #0d5dc4); border: none; border-radius: 60px;
-        color: #fff; font-size: 1.3em; font-weight: 800; cursor: pointer; transition: 0.3s;
+        color: #fff; font-size: 1.3em; font-weight: 800; cursor: pointer; transition: 0.3s; text-decoration: none;
     }
     .download-main-btn:hover { transform: translateY(-5px); box-shadow: 0 20px 60px rgba(24,119,242,0.7); }
-
-    /* ===== LICENSE MODAL ===== */
-    .modal-overlay {
-        position: fixed; top: 0; left: 0; width: 100%; height: 100%;
-        background: rgba(0,0,0,0.8); backdrop-filter: blur(5px); z-index: 9999;
-        display: none; align-items: center; justify-content: center; padding: 20px;
-    }
-    .modal-overlay.active { display: flex; }
-    .modal {
-        background: #111633; border-radius: 20px; padding: 40px; max-width: 500px; width: 100%;
-        border: 1px solid #1877f2; text-align: center; position: relative;
-    }
-    .modal-close { position: absolute; top: 15px; right: 20px; background: none; border: none; color: #fff; font-size: 1.5em; cursor: pointer; }
-    .modal-input {
-        width: 100%; padding: 15px; background: rgba(0,0,0,0.4); border: 2px solid #1877f2;
-        border-radius: 12px; color: #fff; font-size: 1.2em; text-align: center; letter-spacing: 2px; margin: 20px 0; outline: none;
-        font-family: 'Courier New', monospace; font-weight: bold;
-    }
-    .modal-btn {
-        width: 100%; padding: 15px; background: #1877f2; border: none; border-radius: 12px; color: #fff; font-size: 1.1em; font-weight: 700; cursor: pointer;
-    }
-    .modal-error { color: #f44336; margin-bottom: 15px; display: none; font-weight: bold; }
-    .modal-success { display: none; }
 
     /* ===== CHANGELOG & FAQ ===== */
     .changelog, .faq { padding: 80px 20px; }
@@ -275,7 +246,7 @@
         <div class="preview-window">
             <div class="preview-titlebar">
                 <div style="color:#8fa3c0;"><i class="fab fa-facebook"></i> FB Auto IDs Creator Pro</div>
-                <div style="color:#4caf50;"><i class="fas fa-circle"></i> Licensed</div>
+                <div style="color:#4caf50;"><i class="fas fa-circle"></i> Ready</div>
             </div>
             <div class="preview-body">
                 <div class="preview-grid">
@@ -290,7 +261,7 @@
                         <h4><i class="fas fa-terminal"></i> Live Log</h4>
                         <div class="preview-log">
                             <div>[System] Initializing FB Auto Creator...</div>
-                            <div>[License] Premium license verified ✓</div>
+                            <div>[System] Ready to generate accounts...</div>
                             <div>[#001] Creating: ahmed_khan_92...</div>
                             <div>[#001] ✅ Created successfully!</div>
                             <div>[#002] Creating: fatima_ali_88...</div>
@@ -381,37 +352,13 @@
     <div class="download-box">
         <i class="fas fa-cloud-download-alt" style="font-size:4em; color:#1877f2; margin-bottom:20px;"></i>
         <h2>Download <span>Software</span></h2>
-        <p style="color:#8fa3c0; margin-bottom:30px;">Enter your purchased license key to download</p>
-        <button class="download-main-btn" onclick="openLicenseModal()">
-            <i class="fas fa-unlock"></i> Click here to Download
-        </button>
-        <p style="margin-top:20px; font-size:0.9em; color:#8fa3c0;">Size: 18.5 MB | Windows 10/11 Only</p>
+        <p style="color:#8fa3c0; margin-bottom:30px;">Get the latest secure version of FB Auto IDs Creator Pro</p>
+        <a href="https://www.mediafire.com/file/q50apqi77bur0um/FB_ID_Creator_Setup_Final.exe/file" target="_blank" class="download-main-btn">
+            <i class="fas fa-download"></i> Download Setup (.exe)
+        </a>
+        <p style="margin-top:20px; font-size:0.9em; color:#8fa3c0;">Size: Final Build | Windows 10/11 Compatible</p>
     </div>
 </section>
-
-<!-- LICENSE MODAL -->
-<div class="modal-overlay" id="licenseModal">
-    <div class="modal">
-        <button class="modal-close" onclick="closeLicenseModal()">&times;</button>
-        
-        <div id="modalStep1">
-            <h3>🔑 Enter License Key</h3>
-            <p style="color:#8fa3c0; margin-bottom:20px;">Please enter your license key to download the setup file.</p>
-            <input type="text" class="modal-input" id="licenseInput" placeholder="FB5X-XXXX-XXXX-XXXX" maxlength="19" oninput="formatKey(this)">
-            <div class="modal-error" id="licenseError">❌ Invalid License Key! Please purchase a valid key.</div>
-            <button class="modal-btn" onclick="verifyLicense()">Verify & Download</button>
-        </div>
-
-        <div class="modal-success" id="modalStep2">
-            <i class="fas fa-check-circle" style="font-size:4em; color:#4caf50; margin-bottom:20px;"></i>
-            <h3 style="color:#4caf50;">License Verified!</h3>
-            <p style="color:#8fa3c0; margin: 15px 0 25px;">Your key is valid. Click the button below to start downloading.</p>
-            <a href="https://www.mediafire.com/file/e3kioyitxx9f83n/FB+ID+Creator.exe/file" target="_blank" class="modal-btn" style="display:block; text-decoration:none;">
-                <i class="fas fa-download"></i> Download Setup (18.5 MB)
-            </a>
-        </div>
-    </div>
-</div>
 
 <!-- CHANGELOG -->
 <section class="changelog" id="changelog">
@@ -452,7 +399,7 @@
     <div class="faq-list">
         <div class="faq-item">
             <button class="faq-question" onclick="toggleFaq(this)">Kya yeh tool safe hai? <i class="fas fa-chevron-down"></i></button>
-            <div class="faq-answer"><p>Jee bilkul, isme advanced Anti-Ban fingerprinting system laga hua hai jo IDs ko block hone se bachata hai.</p></div>
+            <div class="faq-answer"><p>Jee bilkul, isme advanced Anti-Ban fingerprinting system laga hua hai jo accounts ko block hone se bachata hai.</p></div>
         </div>
         <div class="faq-item">
             <button class="faq-question" onclick="toggleFaq(this)">License key kahan se milegi? <i class="fas fa-chevron-down"></i></button>
@@ -464,7 +411,7 @@
 <!-- FOOTER -->
 <footer class="footer">
     <div style="font-size:1.5em; font-weight:bold; margin-bottom:10px;">FB <span style="color:#1877f2;">Auto IDs</span></div>
-    <p>© 2025 FB Auto IDs Creator Pro. All Rights Reserved.</p>
+    <p>© 2026 FB Auto IDs Creator Pro. All Rights Reserved.</p>
 </footer>
 
 <script>
@@ -481,91 +428,6 @@
         const isOpen = answer.classList.contains('open');
         document.querySelectorAll('.faq-answer').forEach(a => a.classList.remove('open'));
         if (!isOpen) answer.classList.add('open');
-    }
-
-    /* ===== ADVANCED SECURE LICENSE VERIFICATION ===== */
-    
-    // SECRET_SALT -> Yeh `generator.html` ke sath bilkul match hona chahiye
-    const SECRET_SALT = "FB$Pro#9xK2mQ7vL";
-
-    // Hashing Function
-    function simpleHash(str) {
-        let h = 0;
-        for (let i = 0; i < str.length; i++) {
-            h = ((h << 5) - h) + str.charCodeAt(i);
-            h = h & h;
-        }
-        return Math.abs(h).toString(16).toUpperCase().padStart(8, '0');
-    }
-
-    // Generator logic
-    function makeSegment(seed) {
-        const chars = 'ABCDEFGHJKLMNPQRSTUVWXYZ23456789';
-        let out = '';
-        let n = parseInt(simpleHash(seed).slice(0, 8), 16);
-        for (let i = 0; i < 4; i++) {
-            out += chars[n % chars.length];
-            n = Math.floor(n / chars.length) + (i + 1) * 17;
-        }
-        return out;
-    }
-
-    // License Check Logic
-    function isValidLicense(key) {
-        if (!key || typeof key !== 'string') return false;
-        const parts = key.toUpperCase().trim().split('-');
-        
-        // Key format FB5X-XXXX-XXXX-XXXX hona chahiye
-        if (parts.length !== 4) return false;
-        if (!/^FB5[136L]$/.test(parts[0])) return false;
-        if (!/^[A-Z0-9]{4}$/.test(parts[1])) return false;
-        if (!/^[A-Z0-9]{4}$/.test(parts[2])) return false;
-        if (!/^[A-Z0-9]{4}$/.test(parts[3])) return false;
-
-        const body = parts[0] + '-' + parts[1] + '-' + parts[2];
-        const expectedChecksum = makeSegment(SECRET_SALT + body);
-        
-        // Last part checksum check karta hai
-        return parts[3] === expectedChecksum;
-    }
-
-    /* License Modal Logic */
-    function openLicenseModal() {
-        document.getElementById('licenseModal').classList.add('active');
-    }
-
-    function closeLicenseModal() {
-        document.getElementById('licenseModal').classList.remove('active');
-        document.getElementById('modalStep1').style.display = 'block';
-        document.getElementById('modalStep2').style.display = 'none';
-        document.getElementById('licenseInput').value = '';
-        document.getElementById('licenseError').style.display = 'none';
-    }
-
-    // Format Input automatically with hyphens (e.g. FB5X-ABCD-1234-ZYXW)
-    function formatKey(input) {
-        let val = input.value.replace(/[^A-Za-z0-9]/g, '').toUpperCase();
-        let out = '';
-        for (let i = 0; i < val.length && i < 16; i++) {
-            if (i === 4 || i === 8 || i === 12) out += '-';
-            out += val[i];
-        }
-        input.value = out;
-    }
-
-    // Verification trigger
-    function verifyLicense() {
-        const key = document.getElementById('licenseInput').value.trim();
-        
-        // Validate with algorithm
-        if (isValidLicense(key)) {
-            document.getElementById('licenseError').style.display = 'none';
-            document.getElementById('modalStep1').style.display = 'none';
-            document.getElementById('modalStep2').style.display = 'block';
-        } else {
-            // Fake key par reject karega
-            document.getElementById('licenseError').style.display = 'block';
-        }
     }
 </script>
 
